@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SwingWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label height="23" alignment="left" text="Force Touch to Begin" textAlignment="center" id="bWr-ao-gMO" userLabel="TitleLabel">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <label width="106" alignment="left" text="Swings:" id="H0m-N6-evH" userLabel="ForehandLabel"/>
+                        <label alignment="left" text="0" id="MU2-hJ-tbM" userLabel="ForehandCount"/>
+                        <label width="106" alignment="left" text="Mag Accel:" id="hUO-As-84e" userLabel="AccelLabel"/>
+                        <label alignment="left" text="0" id="fva-wb-SGD" userLabel="AccelCount"/>
+                    </items>
+                    <menu key="menu" id="KMo-df-ZHz">
+                        <items>
+                            <menuItem title="Start Workout" icon="accept" id="LDQ-Ky-vho">
+                                <connections>
+                                    <action selector="start" destination="AgC-eL-Hgc" id="c3c-Xx-z8h"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Stop Workout" icon="decline" id="5TK-XJ-TJp">
+                                <connections>
+                                    <action selector="stop" destination="AgC-eL-Hgc" id="hAj-W9-Ubf"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="accelLabel" destination="fva-wb-SGD" id="hOk-MW-P1o"/>
+                        <outlet property="forehandCountLabel" destination="MU2-hJ-tbM" id="i09-nn-vKQ"/>
+                        <outlet property="titleLabel" destination="bWr-ao-gMO" id="Jwr-l0-Q0U"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="219" y="344"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="SwingWatch_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
