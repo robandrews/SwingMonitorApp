@@ -8,10 +8,13 @@
 
 import Foundation
 
-struct AccelerometerData : Codable {
+struct MotionData : Codable {
     let accelX: [Double]
     let accelY: [Double]
     let accelZ: [Double]
+    let rotX:   [Double]
+    let rotY:   [Double]
+    let rotZ:   [Double]
     let userId: String
     let origin: String?
 }

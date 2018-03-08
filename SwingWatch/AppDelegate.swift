@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     func sendAccelerationToServer(accels: [[Double]]) -> Void{
         let endpointUrl = URL(string: Constants.Urls.SWING_SERVICE_URL)
         
-        var dataToEncode = AccelerometerData(accelX: accels[0], accelY: accels[1], accelZ: accels[2], userId: "1", origin: "iOS")
+        var dataToEncode = MotionData(accelX: accels[0], accelY: accels[1], accelZ: accels[2], rotX: accels[3], rotY: accels[4], rotZ: accels[5], userId: "1", origin: "iOS")
 //        <<async>>.
         do {
             print("Trying createSwing request.")
@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             let rotX = message["rotX"] as! [Double]
             let rotY = message["rotY"] as! [Double]
             let rotZ = message["rotZ"] as! [Double]
-            let accels = [accelX, accelY, accelZ]
+            let accels = [accelX, accelY, accelZ, rotX, rotY, rotZ]
             
             
             sendAccelerationToServer(accels: accels)
