@@ -74,7 +74,6 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     @IBAction func start() {
         titleLabel.setText("Workout started")
         workoutManager.startWorkout()
-        self.presentController(withName: "SwingDetectedController", context: ["callback": handleAcknowledgedSwing])
     }
 
     @IBAction func stop() {
