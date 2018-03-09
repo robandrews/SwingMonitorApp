@@ -27,6 +27,11 @@
 		D40BAD62204B7BFA00E31875 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40BAD61204B7BFA00E31875 /* Constants.swift */; };
 		D40BAD64204BCF1C00E31875 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40BAD63204BCF1C00E31875 /* Models.swift */; };
 		D417BDEC2047D81400B4EFA3 /* CommunicationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D417BDEB2047D81400B4EFA3 /* CommunicationsManager.swift */; };
+		D4CD5F5E2052209600F153F3 /* SwingDetectedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD5F5C20521F2D00F153F3 /* SwingDetectedController.swift */; };
+		D4CD5F602052368400F153F3 /* SwingDetectedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD5F5F2052368400F153F3 /* SwingDetectedDelegate.swift */; };
+		D4CD5F61205236F900F153F3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40BAD63204BCF1C00E31875 /* Models.swift */; };
+		D4CD5F632052463C00F153F3 /* SwingStoreSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD5F622052463C00F153F3 /* SwingStoreSingleton.swift */; };
+		D4CD5F6520524AFE00F153F3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD5F6420524AFE00F153F3 /* Utils.swift */; };
 		D4F6159C2046491F002DA0A8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6159B2046491F002DA0A8 /* HealthKit.framework */; };
 		D4F615A1204649BB002DA0A8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F615A0204649BB002DA0A8 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +104,10 @@
 		D40BAD61204B7BFA00E31875 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D40BAD63204BCF1C00E31875 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D417BDEB2047D81400B4EFA3 /* CommunicationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationsManager.swift; sourceTree = "<group>"; };
+		D4CD5F5C20521F2D00F153F3 /* SwingDetectedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingDetectedController.swift; sourceTree = "<group>"; };
+		D4CD5F5F2052368400F153F3 /* SwingDetectedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingDetectedDelegate.swift; sourceTree = "<group>"; };
+		D4CD5F622052463C00F153F3 /* SwingStoreSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingStoreSingleton.swift; sourceTree = "<group>"; };
+		D4CD5F6420524AFE00F153F3 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D4F6159B2046491F002DA0A8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		D4F6159F204649BB002DA0A8 /* SwingWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwingWatch.entitlements; sourceTree = "<group>"; };
 		D4F615A0204649BB002DA0A8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -181,12 +190,16 @@
 				52D5E3C21CF414E1001660B4 /* SwingWatchWatchKitExtension.entitlements */,
 				52AFB3C71CEAD2D800BE33DC /* InterfaceController.swift */,
 				52AFB3E01CEAD5BE00BE33DC /* WorkoutManager.swift */,
+				D4CD5F622052463C00F153F3 /* SwingStoreSingleton.swift */,
 				529BCDF41CF394B60099461F /* MotionManager.swift */,
+				D4CD5F6420524AFE00F153F3 /* Utils.swift */,
 				52A4FC1E1CF59D900039BA23 /* RunningBuffer.swift */,
 				52AFB3C91CEAD2D800BE33DC /* ExtensionDelegate.swift */,
 				52AFB3CD1CEAD2D800BE33DC /* Assets.xcassets */,
 				52AFB3CF1CEAD2D800BE33DC /* Info.plist */,
+				D4CD5F5C20521F2D00F153F3 /* SwingDetectedController.swift */,
 				D417BDEB2047D81400B4EFA3 /* CommunicationsManager.swift */,
+				D4CD5F5F2052368400F153F3 /* SwingDetectedDelegate.swift */,
 			);
 			path = "SwingWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -365,10 +378,15 @@
 			files = (
 				52A4FC1F1CF59D900039BA23 /* RunningBuffer.swift in Sources */,
 				529BCDF51CF394B60099461F /* MotionManager.swift in Sources */,
+				D4CD5F632052463C00F153F3 /* SwingStoreSingleton.swift in Sources */,
 				D417BDEC2047D81400B4EFA3 /* CommunicationsManager.swift in Sources */,
+				D4CD5F602052368400F153F3 /* SwingDetectedDelegate.swift in Sources */,
 				52AFB3E11CEAD5BE00BE33DC /* WorkoutManager.swift in Sources */,
 				52AFB3CA1CEAD2D800BE33DC /* ExtensionDelegate.swift in Sources */,
+				D4CD5F6520524AFE00F153F3 /* Utils.swift in Sources */,
+				D4CD5F61205236F900F153F3 /* Models.swift in Sources */,
 				52AFB3C81CEAD2D800BE33DC /* InterfaceController.swift in Sources */,
+				D4CD5F5E2052209600F153F3 /* SwingDetectedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

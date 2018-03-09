@@ -67,6 +67,10 @@ class CommunicationsManager : NSObject, WCSessionDelegate
         self.wcSession!.sendMessage(msg, replyHandler: replyHandlerBlockMsg, errorHandler: errorHandlerBlock)
     }
     
+//    func sendSwingToiOSDevice(swing: Swing){
+//        self.wcSession!.sendMessage(dict, replyHandler: replyHandlerBlockMsg, errorHandler: errorHandlerBlock)
+//    }
+    
     func sendSwingCountToiOSDevice(count: Int){
         print("Sending swing count")
         let msg = ["swingCount": count, "_msgType": "swingCount"] as [String : Any]

@@ -15,7 +15,7 @@ import HealthKit
  These updates can be used to populate the user interface.
  */
 protocol WorkoutManagerDelegate: class {
-    func didUpdateForehandSwingCount(_ manager: WorkoutManager, forehandCount: Int)
+    func didDetectSwing(_ manager: WorkoutManager, swingCount: Int)
     func didUpdateAccelMagnitude(_ manager: WorkoutManager, lastAccel: Int)
 }
 
@@ -34,7 +34,6 @@ class WorkoutManager: MotionManagerDelegate {
     }
 
     // MARK: WorkoutManager
-    
     func startWorkout() {
         print("Starting swing session.")
         
@@ -76,7 +75,7 @@ class WorkoutManager: MotionManagerDelegate {
     // MARK: MotionManagerDelegate
     
     func didUpdateForehandSwingCount(_ manager: MotionManager, forehandCount: Int) {
-        delegate?.didUpdateForehandSwingCount(self, forehandCount: forehandCount)
+        delegate?.didDetectSwing(self, swingCount: forehandCount)
     }
 
     func didUpdateAccelMagnitude(_ manager: MotionManager, lastAccel: Int) {

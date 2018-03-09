@@ -8,18 +8,48 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
     </dependencies>
     <scenes>
+        <!--Cancel-->
+        <scene sceneID="wLh-iO-MZB">
+            <objects>
+                <controller identifier="SwingDetectedController" title="Cancel" id="IDa-9R-xPM" customClass="SwingDetectedController" customModule="SwingWatch_WatchKit_Extension">
+                    <items>
+                        <separator alignment="left" id="Hns-1A-AVl">
+                            <color key="color" red="0.0" green="0.48651649749999998" blue="0.2020383503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </separator>
+                        <label width="136" height="30" alignment="left" text="Swing Detected" textAlignment="center" id="VPL-dm-QQK">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <separator alignment="left" id="GWT-0R-Zm2">
+                            <color key="color" red="0.0" green="0.48651649749999998" blue="0.2020383503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </separator>
+                        <button width="1" alignment="center" verticalAlignment="center" title="⛳️   Save   ⛳️" id="huT-6A-zWI">
+                            <connections>
+                                <action selector="SwingSaveAction" destination="IDa-9R-xPM" id="PiF-JO-77t"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Ignore" id="ZLo-or-UL6">
+                            <connections>
+                                <action selector="SwingIgnoreAction" destination="IDa-9R-xPM" id="urE-IC-z6p"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="203" y="50"/>
+        </scene>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SwingWatch_WatchKit_App" customModuleProvider="target">
                     <items>
                         <label height="23" alignment="left" text="Force Touch to Begin" textAlignment="center" id="bWr-ao-gMO" userLabel="TitleLabel">
-                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <label width="106" alignment="left" text="Swings:" id="H0m-N6-evH" userLabel="ForehandLabel"/>
                         <label alignment="left" text="0" id="MU2-hJ-tbM" userLabel="ForehandCount"/>
                         <label width="106" alignment="left" text="Mag Accel:" id="hUO-As-84e" userLabel="AccelLabel"/>
                         <label alignment="left" text="0" id="fva-wb-SGD" userLabel="AccelCount"/>
+                        <label width="136" alignment="left" text="No Phone Connection" id="9Lw-vU-Q3p"/>
                     </items>
                     <menu key="menu" id="KMo-df-ZHz">
                         <items>
@@ -37,6 +67,7 @@
                     </menu>
                     <connections>
                         <outlet property="accelLabel" destination="fva-wb-SGD" id="hOk-MW-P1o"/>
+                        <outlet property="ackLabel" destination="9Lw-vU-Q3p" id="xDt-zU-115"/>
                         <outlet property="forehandCountLabel" destination="MU2-hJ-tbM" id="i09-nn-vKQ"/>
                         <outlet property="titleLabel" destination="bWr-ao-gMO" id="Jwr-l0-Q0U"/>
                     </connections>
@@ -68,4 +99,5 @@
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.48651649749999998" blue="0.2020383503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
